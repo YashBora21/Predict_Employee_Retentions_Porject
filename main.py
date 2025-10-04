@@ -89,12 +89,12 @@ def batch_prediction_route_client():
         #prediction the model
         predictModel.batch_predict_from_model()
         return Response("Prediction successfull! and its RunID is : "+str(run_id))
-    except ValueError:
-        return Response("Error Occurred! %s" % ValueError)
-    except KeyError:
-        return Response("Error Occurred! %s" % KeyError)
+    except ValueError as e:
+        return Response(f"Error Occurred! {e}")
+    except KeyError as e:
+        return Response(f"Error Occurred! {e}")
     except Exception as e:
-        return Response("Error Occurred! %s" % e)
+        return Response(f"Error Occurred! {e}")
 
 
 @app.route('/prediction', methods=['POST'])

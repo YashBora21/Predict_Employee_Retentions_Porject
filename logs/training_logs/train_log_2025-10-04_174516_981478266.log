@@ -1,0 +1,287 @@
+2025-10-04 17:45:16,776 : INFO : Start of Training
+2025-10-04 17:45:16,776 : INFO : Run_id:2025-10-04_174516_981478266
+2025-10-04 17:45:16,776 : INFO : Start of Data Load, validation and transformation
+2025-10-04 17:45:16,776 : INFO : Start of Archiving Old Rejected Files...
+2025-10-04 17:45:16,777 : INFO : End of Archiving Old Rejected Files...
+2025-10-04 17:45:16,777 : INFO : Start of Archiving Old Validated Files...
+2025-10-04 17:45:16,777 : INFO : End of Archiving Old Validated Files...
+2025-10-04 17:45:16,777 : INFO : Start of Archiving Old Processed Files...
+2025-10-04 17:45:16,777 : INFO : End of Archiving Old Processed Files...
+2025-10-04 17:45:16,777 : INFO : Start of Archiving Old Result Files...
+2025-10-04 17:45:16,778 : INFO : End of Archiving Old Result Files...
+2025-10-04 17:45:16,778 : INFO : Start of Reading values From Schema...
+2025-10-04 17:45:16,780 : INFO : End of Reading values From Schema...
+2025-10-04 17:45:16,780 : INFO : Start of Validating Column Length...
+2025-10-04 17:45:16,816 : INFO : End of Validating Column Length...
+2025-10-04 17:45:16,817 : INFO : Start of Validating Missing Values...
+2025-10-04 17:45:16,840 : INFO : End of Validating Missing Values...
+2025-10-04 17:45:16,841 : INFO : Start of Replacing Missing Values with NULL...
+2025-10-04 17:45:16,939 : INFO : hr_employee_churn_data.csv: File Transformed successfully!!
+2025-10-04 17:45:16,939 : INFO : End of Replacing Missing Values with NULL...
+2025-10-04 17:45:16,940 : INFO : Start of Creating Table...
+2025-10-04 17:45:16,941 : INFO : Opened training database successfully
+2025-10-04 17:45:16,995 : INFO : CREATE TABLE training_raw_data_t column_name
+2025-10-04 17:45:17,002 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2025-10-04 17:45:17,011 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2025-10-04 17:45:17,018 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2025-10-04 17:45:17,026 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2025-10-04 17:45:17,032 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2025-10-04 17:45:17,039 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2025-10-04 17:45:17,047 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2025-10-04 17:45:17,053 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2025-10-04 17:45:17,062 : INFO : ALTER TABLE training_raw_data_t ADD COLUMN
+2025-10-04 17:45:17,063 : INFO : End of Creating Table...
+2025-10-04 17:45:17,065 : INFO : Opened training database successfully
+2025-10-04 17:45:17,065 : INFO : Start of Inserting Data into Table...
+2025-10-04 17:47:09,239 : INFO : End of Inserting Data into Table...
+2025-10-04 17:47:09,239 : INFO : Start of Exporting Data into CSV...
+2025-10-04 17:47:09,242 : INFO : Opened training database successfully
+2025-10-04 17:47:09,358 : INFO : End of Exporting Data into CSV...
+2025-10-04 17:47:09,360 : INFO : Start of Moving Processed Files...
+2025-10-04 17:47:09,362 : INFO : Moved the already processed file hr_employee_churn_data.csv
+2025-10-04 17:47:09,362 : INFO : End of Moving Processed Files...
+2025-10-04 17:47:09,362 : INFO : End of Data Load, validation and transformation
+2025-10-04 17:47:09,362 : INFO : Start of Preprocessing...
+2025-10-04 17:47:09,362 : INFO : Start of reading dataset...
+2025-10-04 17:47:09,400 : INFO : End of reading dataset...
+2025-10-04 17:47:09,400 : INFO : Start of Droping Columns...
+2025-10-04 17:47:09,402 : INFO : End of Droping Columns...
+2025-10-04 17:47:09,402 : INFO : Start of feature encoding...
+2025-10-04 17:47:09,405 : INFO : End of feature encoding...
+2025-10-04 17:47:09,406 : INFO : Start of Droping Columns...
+2025-10-04 17:47:09,406 : INFO : End of Droping Columns...
+2025-10-04 17:47:09,407 : INFO : Start of finding missing values...
+2025-10-04 17:47:09,412 : INFO : End of finding missing values...
+2025-10-04 17:47:09,412 : INFO : Start of imputing missing values...
+2025-10-04 17:47:09,444 : INFO : End of imputing missing values...
+2025-10-04 17:47:09,444 : INFO : Start of splitting features and label ...
+2025-10-04 17:47:09,445 : INFO : End of splitting features and label ...
+2025-10-04 17:47:09,445 : INFO : End of Preprocessing...
+2025-10-04 17:47:09,447 : INFO : Start of elbow plotting...
+2025-10-04 17:47:14,345 : INFO : The optimum number of clusters is: 3
+2025-10-04 17:47:14,345 : INFO : End of elbow plotting...
+2025-10-04 17:47:14,345 : INFO : Start of Create clusters...
+2025-10-04 17:47:14,360 : INFO : Start of Save Models
+2025-10-04 17:47:14,360 : INFO : Start of Save Models
+2025-10-04 17:47:14,362 : INFO : Model File KMeans saved
+2025-10-04 17:47:14,362 : INFO : Model File KMeans saved
+2025-10-04 17:47:14,363 : INFO : End of Save Models
+2025-10-04 17:47:14,363 : INFO : End of Save Models
+2025-10-04 17:47:14,364 : INFO : succesfully created 3clusters.
+2025-10-04 17:47:14,364 : INFO : End of Create clusters...
+2025-10-04 17:47:14,370 : INFO : Start of finding best model...
+2025-10-04 17:47:14,370 : INFO : Start of finding best params for XGBoost algo...
+2025-10-04 17:47:19,182 : ERROR : Exception raised while finding best params for XGBoost algo:
+All the 320 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+320 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\sklearn.py", line 813, in fit
+    train_dmatrix = DMatrix(X, label=training_labels, weight=sample_weight,
+                            base_margin=base_margin,
+                            missing=self.missing, nthread=self.n_jobs)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 489, in __init__
+    self.set_label(label)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 776, in set_label
+    self.set_float_info('label', label)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 689, in set_float_info
+    self.set_float_info_npy2d(field, data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 709, in set_float_info_npy2d
+    data = _maybe_np_slice(data, np.float32)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 387, in _maybe_np_slice
+    data = np.array(data, copy=False, dtype=dtype)
+ValueError: Unable to avoid copy while creating an array as requested.
+If using `np.array(obj, copy=False)` replace it with `np.asarray(obj)` to allow a copy when needed (no behavior change in NumPy 1.x).
+For more details, see https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword.
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\model_tuner.py", line 108, in best_params_xgboost
+    self.grid.fit(train_x, train_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_search.py", line 1051, in fit
+    self._run_search(evaluate_candidates)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_search.py", line 1605, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_search.py", line 1028, in evaluate_candidates
+    _warn_or_raise_about_fit_failures(out, self.error_score)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_validation.py", line 505, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 320 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+320 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\sklearn.py", line 813, in fit
+    train_dmatrix = DMatrix(X, label=training_labels, weight=sample_weight,
+                            base_margin=base_margin,
+                            missing=self.missing, nthread=self.n_jobs)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 489, in __init__
+    self.set_label(label)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 776, in set_label
+    self.set_float_info('label', label)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 689, in set_float_info
+    self.set_float_info_npy2d(field, data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 709, in set_float_info_npy2d
+    data = _maybe_np_slice(data, np.float32)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 387, in _maybe_np_slice
+    data = np.array(data, copy=False, dtype=dtype)
+ValueError: Unable to avoid copy while creating an array as requested.
+If using `np.array(obj, copy=False)` replace it with `np.asarray(obj)` to allow a copy when needed (no behavior change in NumPy 1.x).
+For more details, see https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword.
+
+2025-10-04 17:47:19,241 : ERROR : Exception raised while finding best model:
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\model_tuner.py", line 108, in best_params_xgboost
+    self.grid.fit(train_x, train_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_search.py", line 1051, in fit
+    self._run_search(evaluate_candidates)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_search.py", line 1605, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_search.py", line 1028, in evaluate_candidates
+    _warn_or_raise_about_fit_failures(out, self.error_score)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_validation.py", line 505, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 320 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+320 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\sklearn.py", line 813, in fit
+    train_dmatrix = DMatrix(X, label=training_labels, weight=sample_weight,
+                            base_margin=base_margin,
+                            missing=self.missing, nthread=self.n_jobs)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 489, in __init__
+    self.set_label(label)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 776, in set_label
+    self.set_float_info('label', label)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 689, in set_float_info
+    self.set_float_info_npy2d(field, data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 709, in set_float_info_npy2d
+    data = _maybe_np_slice(data, np.float32)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 387, in _maybe_np_slice
+    data = np.array(data, copy=False, dtype=dtype)
+ValueError: Unable to avoid copy while creating an array as requested.
+If using `np.array(obj, copy=False)` replace it with `np.asarray(obj)` to allow a copy when needed (no behavior change in NumPy 1.x).
+For more details, see https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\model_tuner.py", line 145, in get_best_model
+    self.xgboost= self.best_params_xgboost(train_x,train_y)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\model_tuner.py", line 124, in best_params_xgboost
+    raise Exception()
+Exception
+2025-10-04 17:47:19,245 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\model_tuner.py", line 108, in best_params_xgboost
+    self.grid.fit(train_x, train_y)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\base.py", line 1365, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_search.py", line 1051, in fit
+    self._run_search(evaluate_candidates)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_search.py", line 1605, in _run_search
+    evaluate_candidates(ParameterGrid(self.param_grid))
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_search.py", line 1028, in evaluate_candidates
+    _warn_or_raise_about_fit_failures(out, self.error_score)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_validation.py", line 505, in _warn_or_raise_about_fit_failures
+    raise ValueError(all_fits_failed_message)
+ValueError: 
+All the 320 fits failed.
+It is very likely that your model is misconfigured.
+You can try to debug the error by setting error_score='raise'.
+
+Below are more details about the failures:
+--------------------------------------------------------------------------------
+320 fits failed with the following error:
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\sklearn\model_selection\_validation.py", line 859, in _fit_and_score
+    estimator.fit(X_train, y_train, **fit_params)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\sklearn.py", line 813, in fit
+    train_dmatrix = DMatrix(X, label=training_labels, weight=sample_weight,
+                            base_margin=base_margin,
+                            missing=self.missing, nthread=self.n_jobs)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 489, in __init__
+    self.set_label(label)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 776, in set_label
+    self.set_float_info('label', label)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 689, in set_float_info
+    self.set_float_info_npy2d(field, data)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 709, in set_float_info_npy2d
+    data = _maybe_np_slice(data, np.float32)
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\env\Lib\site-packages\xgboost\core.py", line 387, in _maybe_np_slice
+    data = np.array(data, copy=False, dtype=dtype)
+ValueError: Unable to avoid copy while creating an array as requested.
+If using `np.array(obj, copy=False)` replace it with `np.asarray(obj)` to allow a copy when needed (no behavior change in NumPy 1.x).
+For more details, see https://numpy.org/devdocs/numpy_2_0_migration_guide.html#adapting-to-changes-in-the-copy-keyword.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\model_tuner.py", line 145, in get_best_model
+    self.xgboost= self.best_params_xgboost(train_x,train_y)
+                  ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\model_tuner.py", line 124, in best_params_xgboost
+    raise Exception()
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\training\train_model.py", line 84, in training_model
+    best_model_name, best_model = self.modelTuner.get_best_model(x_train, y_train, x_test, y_test)
+                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\model_tuner.py", line 175, in get_best_model
+    raise Exception()
+Exception

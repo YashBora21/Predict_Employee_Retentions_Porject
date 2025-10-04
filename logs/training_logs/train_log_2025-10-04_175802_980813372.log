@@ -1,0 +1,143 @@
+2025-10-04 17:58:02,998 : INFO : Start of Training
+2025-10-04 17:58:02,998 : INFO : Run_id:2025-10-04_175802_980813372
+2025-10-04 17:58:02,998 : INFO : Start of Data Load, validation and transformation
+2025-10-04 17:58:02,998 : INFO : Start of Archiving Old Rejected Files...
+2025-10-04 17:58:02,998 : INFO : End of Archiving Old Rejected Files...
+2025-10-04 17:58:02,998 : INFO : Start of Archiving Old Validated Files...
+2025-10-04 17:58:03,006 : INFO : End of Archiving Old Validated Files...
+2025-10-04 17:58:03,007 : INFO : Start of Archiving Old Processed Files...
+2025-10-04 17:58:03,007 : INFO : End of Archiving Old Processed Files...
+2025-10-04 17:58:03,007 : INFO : Start of Archiving Old Result Files...
+2025-10-04 17:58:03,007 : INFO : End of Archiving Old Result Files...
+2025-10-04 17:58:03,007 : INFO : Start of Reading values From Schema...
+2025-10-04 17:58:03,008 : INFO : End of Reading values From Schema...
+2025-10-04 17:58:03,008 : INFO : Start of Validating Column Length...
+2025-10-04 17:58:03,040 : INFO : End of Validating Column Length...
+2025-10-04 17:58:03,040 : INFO : Start of Validating Missing Values...
+2025-10-04 17:58:03,055 : INFO : End of Validating Missing Values...
+2025-10-04 17:58:03,056 : INFO : Start of Replacing Missing Values with NULL...
+2025-10-04 17:58:03,136 : INFO : hr_employee_churn_data (1).csv: File Transformed successfully!!
+2025-10-04 17:58:03,136 : INFO : End of Replacing Missing Values with NULL...
+2025-10-04 17:58:03,136 : INFO : Start of Creating Table...
+2025-10-04 17:58:03,137 : INFO : Opened training database successfully
+2025-10-04 17:58:03,137 : INFO : Tables created successfully
+2025-10-04 17:58:03,137 : INFO : Closed training database successfully
+2025-10-04 17:58:03,137 : INFO : End of Creating Table...
+2025-10-04 17:58:03,138 : INFO : Opened training database successfully
+2025-10-04 17:58:03,138 : INFO : Start of Inserting Data into Table...
+2025-10-04 17:59:50,448 : INFO : End of Inserting Data into Table...
+2025-10-04 17:59:50,448 : INFO : Start of Exporting Data into CSV...
+2025-10-04 17:59:50,451 : INFO : Opened training database successfully
+2025-10-04 17:59:50,600 : INFO : End of Exporting Data into CSV...
+2025-10-04 17:59:50,603 : INFO : Start of Moving Processed Files...
+2025-10-04 17:59:50,605 : INFO : Moved the already processed file hr_employee_churn_data (1).csv
+2025-10-04 17:59:50,605 : INFO : End of Moving Processed Files...
+2025-10-04 17:59:50,605 : INFO : End of Data Load, validation and transformation
+2025-10-04 17:59:50,605 : INFO : Start of Preprocessing...
+2025-10-04 17:59:50,605 : INFO : Start of reading dataset...
+2025-10-04 17:59:50,671 : INFO : End of reading dataset...
+2025-10-04 17:59:50,671 : INFO : Start of Droping Columns...
+2025-10-04 17:59:50,673 : INFO : End of Droping Columns...
+2025-10-04 17:59:50,674 : INFO : Start of feature encoding...
+2025-10-04 17:59:50,679 : INFO : End of feature encoding...
+2025-10-04 17:59:50,681 : INFO : Start of Droping Columns...
+2025-10-04 17:59:50,683 : INFO : End of Droping Columns...
+2025-10-04 17:59:50,683 : INFO : Start of finding missing values...
+2025-10-04 17:59:50,691 : INFO : End of finding missing values...
+2025-10-04 17:59:50,691 : INFO : Start of imputing missing values...
+2025-10-04 17:59:50,730 : INFO : End of imputing missing values...
+2025-10-04 17:59:50,730 : INFO : Start of splitting features and label ...
+2025-10-04 17:59:50,731 : INFO : End of splitting features and label ...
+2025-10-04 17:59:50,731 : INFO : End of Preprocessing...
+2025-10-04 17:59:50,732 : INFO : Start of elbow plotting...
+2025-10-04 17:59:53,624 : INFO : The optimum number of clusters is: 3
+2025-10-04 17:59:53,624 : INFO : End of elbow plotting...
+2025-10-04 17:59:53,624 : INFO : Start of Create clusters...
+2025-10-04 17:59:53,642 : INFO : Start of Save Models
+2025-10-04 17:59:53,642 : INFO : Start of Save Models
+2025-10-04 17:59:53,660 : ERROR : Exception raised while Save Models: [WinError 5] Access is denied: 'apps/models\\KMeans'
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\core\file_operation.py", line 51, in save_model
+    shutil.rmtree('apps/models')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "C:\Python313\Lib\shutil.py", line 621, in _rmtree_unsafe
+    onexc(os.rmdir, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\shutil.py", line 617, in _rmtree_unsafe
+    os.rmdir(fullname)
+    ~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'apps/models\\KMeans'
+2025-10-04 17:59:53,660 : ERROR : Exception raised while Save Models: [WinError 5] Access is denied: 'apps/models\\KMeans'
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\core\file_operation.py", line 51, in save_model
+    shutil.rmtree('apps/models')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "C:\Python313\Lib\shutil.py", line 621, in _rmtree_unsafe
+    onexc(os.rmdir, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\shutil.py", line 617, in _rmtree_unsafe
+    os.rmdir(fullname)
+    ~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'apps/models\\KMeans'
+2025-10-04 17:59:53,667 : ERROR : Exception raised while Creating clusters:
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\core\file_operation.py", line 51, in save_model
+    shutil.rmtree('apps/models')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "C:\Python313\Lib\shutil.py", line 621, in _rmtree_unsafe
+    onexc(os.rmdir, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\shutil.py", line 617, in _rmtree_unsafe
+    os.rmdir(fullname)
+    ~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'apps/models\\KMeans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\cluster.py", line 94, in create_clusters
+    self.saveModel = self.fileOperation.save_model(self.kmeans, 'KMeans')
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\core\file_operation.py", line 63, in save_model
+    raise Exception()
+Exception
+2025-10-04 17:59:53,669 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\core\file_operation.py", line 51, in save_model
+    shutil.rmtree('apps/models')
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\shutil.py", line 790, in rmtree
+    return _rmtree_unsafe(path, onexc)
+  File "C:\Python313\Lib\shutil.py", line 621, in _rmtree_unsafe
+    onexc(os.rmdir, fullname, err)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python313\Lib\shutil.py", line 617, in _rmtree_unsafe
+    os.rmdir(fullname)
+    ~~~~~~~~^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'apps/models\\KMeans'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\cluster.py", line 94, in create_clusters
+    self.saveModel = self.fileOperation.save_model(self.kmeans, 'KMeans')
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\core\file_operation.py", line 63, in save_model
+    raise Exception()
+Exception
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\training\train_model.py", line 68, in training_model
+    self.X= self.cluster.create_clusters(self.X, number_of_clusters)
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\OneDrive\Desktop\Employee_Retention_Project\apps\tuning\cluster.py", line 103, in create_clusters
+    raise Exception()
+Exception

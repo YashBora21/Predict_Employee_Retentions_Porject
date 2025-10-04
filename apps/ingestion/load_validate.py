@@ -82,16 +82,14 @@ class LoadValidate:
         """
         try:
             self.logger.info('Start of Validating Column Length...')
-            rejects_dir = self.data_path + '_rejects'
-            if not os.path.isdir(rejects_dir):
-                os.makedirs(rejects_dir)
             for file in listdir(self.data_path):
                 csv = pd.read_csv(self.data_path+'/'+ file)
                 if csv.shape[1] == number_of_columns:
                     pass
                 else:
-                    shutil.move(self.data_path +'/'+ file, rejects_dir)
+                    shutil.move(self.data_path +'/'+ file, self.data_path+'_rejects')
                     self.logger.info("Invalid Columns Length :: %s" % file)
+
             self.logger.info('End of Validating Column Length...')
         except OSError:
             self.logger.exception('OSError raised while Validating Column Length')
@@ -258,12 +256,10 @@ class LoadValidate:
         """
         try:
             self.logger.info('Start of Moving Processed Files...')
-            processed_dir = self.data_path + '_processed'
-            if not os.path.isdir(processed_dir):
-                os.makedirs(processed_dir)
             for file in listdir(self.data_path):
-                shutil.move(self.data_path + '/' + file, processed_dir)
+                shutil.move(self.data_path + '/' + file, self.data_path + '_processed')
                 self.logger.info("Moved the already processed file %s" % file)
+
             self.logger.info('End of Moving Processed Files...')
         except Exception as e:
             self.logger.exception('Exception raised while Moving Processed Files: %s' % e)
