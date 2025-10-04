@@ -1,6 +1,5 @@
 ﻿# Predict_Employee_Retentions_Project
 
-# Predict_Employee_Retentions_Project
 
 ## 📌 Project Overview
 
@@ -126,3 +125,4 @@ This project is licensed under the MIT License.
 **Yash Bora**  
 Email: yashbora567@gmail.com  
 GitHub: [github.com/YashBora21](https://github.com/YashBora21)
+
