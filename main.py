@@ -22,7 +22,7 @@ def index_page():
     *
     * who             when           version  change (include bug# if apply)
     * ----------      -----------    -------  ------------------------------
-    * Yash      05-MAY-2020    1.0      initial creation
+    * Yash      05-MAY-2025    1.0      initial creation
     *
     * Parameters
     *   None
@@ -158,8 +158,4 @@ def single_prediction_route_client():
         return Response("Error Occurred! %s" % e)
 
 if __name__ == "__main__":
-    #app.run()
-    host = '0.0.0.0'
-    port = 5000
-    httpd = simple_server.make_server(host, port, app)
-    httpd.serve_forever()
+    app.run(debug=True)

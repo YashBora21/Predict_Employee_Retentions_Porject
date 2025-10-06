@@ -7,149 +7,297 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round"><link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
     <title>YASH | Employee Churn</title>
-
 </head>
 <body>
 
     <div class="container">
-  <div class="py-5 text-center">
-  <img id="logo" class="d-block mx-auto mb-4" src="img.png" alt="">    <h2>Predict Employee Retention</h2>
-    <p class="lead">Below is an example form built to predict the HR Employee Retention in an Organization</p>
-  </div>
+        <div class="py-5 text-center">
+            <img id="logo" class="d-block mx-auto mb-4" src="{{ url_for('static', filename='img.png') }}" alt="Company Logo">
+            <h2>Predict Employee Retention</h2>
+            <p class="lead">Below is an example form built to predict the HR Employee Retention in an Organization</p>
+        </div>
 
-  <div class="row">
-  <div class="col-md-2">
-  </div>
-    <div class="col-md-8">
-      <h4 class="mb-3">Employee Details</h4>
-
-
-   <div id="result"></div>
-
-      <form id="predictForm" class="needs-validation" >
         <div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="satisfaction_level">Satisfaction Level</label>
-            <input type="text" class="form-control" id="satisfaction_level" placeholder="eg. 0.53" value="" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="last_evaluation">Last Evaluation</label>
-            <input type="text" class="form-control" id="last_evaluation" placeholder="eg. 0.82" value="" required>
-          </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h4 class="mb-3">Employee Details</h4>
+
+                <div id="result"></div>
+
+                <!-- Removed form tag, using div instead -->
+                <div id="predictForm" class="needs-validation">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="satisfaction_level">Satisfaction Level</label>
+                            <input type="text" class="form-control" id="satisfaction_level" placeholder="eg. 0.53" value="" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="last_evaluation">Last Evaluation</label>
+                            <input type="text" class="form-control" id="last_evaluation" placeholder="eg. 0.82" value="" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="number_project">Number Of Project</label>
+                            <input type="text" class="form-control" id="number_project" placeholder="eg. 2" value="" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="average_montly_hours">Average Monthly Hours</label>
+                            <input type="text" class="form-control" id="average_montly_hours" placeholder="eg. 160" value="" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="time_spend_company">Time Spend Company</label>
+                            <input type="text" class="form-control" id="time_spend_company" placeholder="eg. 2" value="" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="work_accident">Work Accident</label>
+                            <input type="text" class="form-control" id="work_accident" placeholder="eg. 0" value="" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="promotion_last_5years">Promotion Last 5 Years</label>
+                            <input type="text" class="form-control" id="promotion_last_5years" placeholder="eg. 0" value="" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="salary">Salary</label>
+                            <input type="text" class="form-control" id="salary" placeholder="eg. low" value="" required>
+                        </div>
+                    </div>
+
+                    <!-- Changed to button type="button" instead of submit -->
+                    <button class="btn btn-primary btn-lg btn-block" type="button" id="submitBtn">Submit</button>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
         </div>
 
-		<div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="number_project">Number Of Project</label>
-            <input type="text" class="form-control" id="number_project" placeholder="eg.2" value="" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="average_montly_hours">Average Montly Hours</label>
-            <input type="text" class="form-control" id="average_montly_hours" placeholder="eg.160" value="" required>
-          </div>
-        </div>
-
-
-		<div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="time_spend_company">Time Spend Company</label>
-            <input type="text" class="form-control" id="time_spend_company" placeholder="eg.2" value="" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="work_accident">Work Accident</label>
-            <input type="text" class="form-control" id="work_accident" placeholder="" value="eg.0" required>
-          </div>
-        </div>
-
-		<div class="row">
-          <div class="col-md-6 mb-3">
-            <label for="promotion_last_5years">Promotion Last 5years</label>
-            <input type="text" class="form-control" id="promotion_last_5years" placeholder="eg.3" value="" required>
-          </div>
-          <div class="col-md-6 mb-3">
-            <label for="salary">Salary</label>
-            <input type="text" class="form-control" id="salary" placeholder="" value="" required>
-          </div>
-        </div>
-
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
-
-
-
-
-        </div>
-<div class="col-md-2">
-  </div>
-
-      </form>
-
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2025 YASH</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+        </footer>
     </div>
-  </div>
 
-  <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; 2025 YASH</p>
-    <ul class="list-inline">
-      <li class="list-inline-item"><a href="#">Privacy</a></li>
-      <li class="list-inline-item"><a href="#">Terms</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </footer>
-</div>
-
-
-<!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+    <!-- Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- jsPDF library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
-<script type="text/javascript">
-    $("#predictForm" ).submit(function( event ) {
+    <!-- Your custom script -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            console.log("Page loaded successfully!");
+            
+            // Button click handler - NO FORM SUBMISSION
+            $("#submitBtn").click(function() {
+                console.log("Button clicked!");
 
-  // Stop form from submitting normally
-     event.preventDefault();
+                // Show loading message
+                $("#result").html('<div class="alert alert-info" role="alert"><strong>Processing...</strong> Please wait while we predict the result.</div>');
 
-  // Get some values from elements on the page:
-      var $form = $( this )
-      satisfaction_level = $form.find("input[id='satisfaction_level']" ).val()
-      last_evaluation = $form.find("input[id='last_evaluation']" ).val()
-      number_project = $form.find("input[id='number_project']" ).val()
-      average_montly_hours = $form.find("input[id='average_montly_hours']" ).val()
-      time_spend_company = $form.find("input[id='time_spend_company']" ).val()
-      work_accident = $form.find("input[id='work_accident']" ).val()
-      promotion_last_5years = $form.find("input[id='promotion_last_5years']" ).val()
-      salary = $form.find("input[id='salary']" ).val()
+                // Collect form data
+                var formData = {
+                    satisfaction_level: $("#satisfaction_level").val(),
+                    last_evaluation: $("#last_evaluation").val(),
+                    number_project: $("#number_project").val(),
+                    average_montly_hours: $("#average_montly_hours").val(),
+                    time_spend_company: $("#time_spend_company").val(),
+                    work_accident: $("#work_accident").val(),
+                    promotion_last_5years: $("#promotion_last_5years").val(),
+                    salary: $("#salary").val()
+                };
 
-     var settings = {
-  "url": "http://localhost:5000/prediction",
-  "method": "POST",
-  "timeout": 0,
-  "headers": {
-    "Content-Type": "application/x-www-form-urlencoded"
-  },
-  "data": {
-    "satisfaction_level": satisfaction_level,
-    "last_evaluation": last_evaluation,
-    "number_project": number_project,
-    "average_montly_hours": average_montly_hours,
-    "time_spend_company": time_spend_company,
-    "work_accident": work_accident,
-    "promotion_last_5years": promotion_last_5years,
-    "salary": salary
-  }
-};
+                console.log("Sending data:", formData);
 
-$.ajax(settings).done(function (response) {
-  console.log(response);
-  $( "#result" ).empty().append('<div class="alert alert-success" role="alert">'+response+'</div>' );
-});
+                // Disable button to prevent double-click
+                $("#submitBtn").prop('disabled', true).text('Processing...');
 
-    });
-</script>
+                // Make AJAX request
+                $.ajax({
+                    url: "http://localhost:5000/prediction",
+                    type: "POST",
+                    data: formData,
+                    timeout: 10000,
+                    success: function(response) {
+                        console.log("Success! Response:", response);
+                        
+                        // Extract prediction from response
+                        var predictionResult = response;
+                        
+                        // Try to extract the actual prediction value from "Predicted Output is : X" format
+                        if (response.includes("Predicted Output is :")) {
+                            predictionResult = response.split("Predicted Output is :")[1].trim();
+                        } else if (response.includes("Predicted Output is:")) {
+                            predictionResult = response.split("Predicted Output is:")[1].trim();
+                        }
+                        
+                        // Determine if employee will leave or stay
+                        var interpretedResult = "";
+                        var alertClass = "alert-success";
+                        
+                        if (predictionResult === "0" || predictionResult.toLowerCase().includes("stay") || predictionResult.toLowerCase().includes("retain")) {
+                            interpretedResult = "Employee will likely STAY with the company";
+                            alertClass = "alert-success";
+                        } else if (predictionResult === "1" || predictionResult.toLowerCase().includes("leave") || predictionResult.toLowerCase().includes("churn")) {
+                            interpretedResult = "Employee will likely LEAVE the company";
+                            alertClass = "alert-warning";
+                        } else {
+                            interpretedResult = predictionResult;
+                        }
+                        
+                        // Show success message with interpretation
+                        $("#result").html('<div class="alert ' + alertClass + '" role="alert"><strong>Prediction Complete!</strong><br><h5>' + interpretedResult + '</h5><small>Raw prediction: ' + predictionResult + '</small></div>');
+                        
+                        // Create PDF using jsPDF
+                        const { jsPDF } = window.jspdf;
+                        const doc = new jsPDF();
+                        
+                        var currentDate = new Date().toLocaleString();
+                        var yPos = 20;
+                        
+                        // Title
+                        doc.setFontSize(18);
+                        doc.setFont(undefined, 'bold');
+                        doc.text("EMPLOYEE RETENTION PREDICTION", 105, yPos, { align: 'center' });
+                        
+                        yPos += 10;
+                        doc.setFontSize(12);
+                        doc.text("REPORT", 105, yPos, { align: 'center' });
+                        
+                        // Line separator
+                        yPos += 5;
+                        doc.setLineWidth(0.5);
+                        doc.line(20, yPos, 190, yPos);
+                        
+                        // Date
+                        yPos += 10;
+                        doc.setFontSize(10);
+                        doc.setFont(undefined, 'normal');
+                        doc.text("Date & Time: " + currentDate, 20, yPos);
+                        
+                        // Input Details Section
+                        yPos += 15;
+                        doc.setFontSize(14);
+                        doc.setFont(undefined, 'bold');
+                        doc.text("INPUT DETAILS", 20, yPos);
+                        
+                        yPos += 8;
+                        doc.setFontSize(10);
+                        doc.setFont(undefined, 'normal');
+                        doc.text("Satisfaction Level:", 25, yPos);
+                        doc.text(formData.satisfaction_level, 100, yPos);
+                        
+                        yPos += 7;
+                        doc.text("Last Evaluation:", 25, yPos);
+                        doc.text(formData.last_evaluation, 100, yPos);
+                        
+                        yPos += 7;
+                        doc.text("Number of Projects:", 25, yPos);
+                        doc.text(formData.number_project, 100, yPos);
+                        
+                        yPos += 7;
+                        doc.text("Average Monthly Hours:", 25, yPos);
+                        doc.text(formData.average_montly_hours, 100, yPos);
+                        
+                        yPos += 7;
+                        doc.text("Time Spent in Company:", 25, yPos);
+                        doc.text(formData.time_spend_company + " years", 100, yPos);
+                        
+                        yPos += 7;
+                        doc.text("Work Accident:", 25, yPos);
+                        doc.text(formData.work_accident === "1" ? "Yes" : "No", 100, yPos);
+                        
+                        yPos += 7;
+                        doc.text("Promotions (Last 5 Years):", 25, yPos);
+                        doc.text(formData.promotion_last_5years, 100, yPos);
+                        
+                        yPos += 7;
+                        doc.text("Salary Level:", 25, yPos);
+                        doc.text(formData.salary.toUpperCase(), 100, yPos);
+                        
+                        // Prediction Result Section
+                        yPos += 15;
+                        doc.setFontSize(14);
+                        doc.setFont(undefined, 'bold');
+                        doc.text("PREDICTION RESULT", 20, yPos);
+                        
+                        yPos += 10;
+                        doc.setFontSize(12);
+                        
+                        // Highlight box for prediction
+                        if (alertClass === "alert-success") {
+                            doc.setFillColor(40, 167, 69); // Green
+                        } else {
+                            doc.setFillColor(255, 193, 7); // Yellow/Warning
+                        }
+                        doc.roundedRect(20, yPos - 5, 170, 15, 3, 3, 'F');
+                        
+                        doc.setTextColor(255, 255, 255); // White text
+                        doc.setFont(undefined, 'bold');
+                        doc.text(interpretedResult, 105, yPos + 5, { align: 'center' });
+                        
+                        // Reset text color
+                        doc.setTextColor(0, 0, 0);
+                        
+                        yPos += 20;
+                        doc.setFontSize(9);
+                        doc.setFont(undefined, 'italic');
+                        doc.text("Raw Model Output: " + predictionResult, 25, yPos);
+                        
+                        // Footer note
+                        yPos += 15;
+                        doc.setFontSize(9);
+                        doc.setFont(undefined, 'normal');
+                        doc.text("Note: This prediction is based on machine learning analysis and should be used as", 20, yPos);
+                        yPos += 5;
+                        doc.text("one factor in HR decision-making. Consider additional context and human judgment.", 20, yPos);
+                        
+                        // Footer
+                        doc.setFontSize(8);
+                        doc.setFont(undefined, 'italic');
+                        doc.text("© 2025 YASH | Employee Retention Prediction System", 105, 280, { align: 'center' });
+                        
+                        // Save PDF
+                        var filename = "employee_prediction_result_" + Date.now() + ".pdf";
+                        doc.save(filename);
+                        
+                        console.log("PDF downloaded successfully!");
+                        console.log("Prediction result:", predictionResult);
+                        
+                        // Re-enable button
+                        $("#submitBtn").prop('disabled', false).text('Submit');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error("Error occurred!");
+                        console.error("Status:", status);
+                        console.error("Error:", error);
+                        console.error("Response:", xhr.responseText);
+                        
+                        var errorMsg = xhr.responseText || error || "Unknown error occurred. Please check if the Flask server is running on localhost:5000";
+                        $("#result").html('<div class="alert alert-danger" role="alert"><strong>Error!</strong><br>' + errorMsg + '</div>');
+                        // Re-enable button
+                        $("#submitBtn").prop('disabled', false).text('Submit');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
